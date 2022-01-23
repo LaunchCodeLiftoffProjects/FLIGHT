@@ -1,27 +1,29 @@
 package org.example.models;
 
-
 import java.util.Objects;
 
-public class Health {
+public class Recommendations {
 
     public Object Result;
 
-    public Health(Object Result) {
-        super();
-        this.Result = Result;
+    public Recommendations(Object result) {
+        Result = result;
     }
 
     public Object getResult() {
         return Result;
     }
 
+    public void setResult(Object result) {
+        Result = result;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Health)) return false;
-        Health health = (Health) o;
-        return Objects.equals(Result, health.Result);
+        if (!(o instanceof Recommendations)) return false;
+        Recommendations that = (Recommendations) o;
+        return Objects.equals(Result, that.Result);
     }
 
     @Override
@@ -34,7 +36,4 @@ public class Health {
 
         return "I ADDED THIS FOR: " + Result;
     }
-    }
-
-
-
+}

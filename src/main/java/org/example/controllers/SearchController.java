@@ -35,6 +35,8 @@ import java.net.http.HttpResponse;
             if (userStr.contains(" ")) {
                 newString = userStr.replace(" ", "%20");
             }
+            else { return userStr; }
+
             return newString;
         }
 

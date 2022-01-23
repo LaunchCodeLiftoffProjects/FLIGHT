@@ -16,4 +16,10 @@ public class HomeController {
         return "index";
     }
 
+    @RequestMapping("bmi")
+    public String bmiCalculator(Model model){
+
+        return "bmi";
+    }
+
 }

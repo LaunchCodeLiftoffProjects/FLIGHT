@@ -6,3 +6,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <title th:text="'Flight' + ${title == null ? '' : ' :: ' + title}">Let's Take Flight</title>
 </head>
+<body>
+<div th:fragment="welcomeMessage">
+    <nav>
+        <h3>Testing, testing</h3>
+    </nav>
+    <h1 th:text="|Hello ${name}|"></h1>
+</div>
+</body>

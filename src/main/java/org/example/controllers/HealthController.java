@@ -1,6 +1,7 @@
 package org.example.controllers;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import org.example.models.Api;
 import org.example.models.Health;
 import org.example.models.Search;
@@ -31,13 +32,13 @@ public class HealthController {
         URI topical = new URI("https://health.gov/myhealthfinder/api/v3/topicsearch.json?categoryId="+searchTopic);
         Api getTopicInfo = new Api();
         Gson gson2 = new Gson();
+       // JsonObject json = new JsonObject();
         String stringAPI = getTopicInfo.getRecipeInfo(topical);
-        Health topicalAPI = gson2.fromJson(stringAPI, Health.class);
+        Health topicInfo = gson2.fromJson(stringAPI, Health.class);
 
-        model.addAttribute("topics", topicalAPI.getResult());
+        model.addAttribute("topics", topicInfo.getResult());
 
         return "results";
     }
-
 
 }

@@ -7,19 +7,11 @@ public class Search {
 
     private int id;
     public ArrayList<Object> hits;
-    private String label;
-    private String recipe;
-    private String ingredient;
 
-    public Search(ArrayList<Object> hits, String label) {
+    public Search(ArrayList<Object> hits) {
         super();
         this.hits = hits;
-        this.label = label;
     }
-
-   /* public Search() {
-
-    }*/
 
     public void setId(int id) {
         this.id = id;
@@ -37,41 +29,18 @@ public class Search {
         this.hits = hits;
     }
 
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
-
-    public String getRecipe() {
-        return recipe;
-    }
-
-    public void setRecipe(String recipe) {
-        this.recipe = recipe;
-    }
-
-    public String getIngredient() {
-        return ingredient;
-    }
-
-    public void setIngredient(String ingredient) {
-        this.ingredient = ingredient;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Search)) return false;
         Search search = (Search) o;
-        return id == search.id && Objects.equals(hits, search.hits) && Objects.equals(label, search.label) && Objects.equals(recipe, search.recipe) && Objects.equals(ingredient, search.ingredient);
+        return id == search.id && Objects.equals(hits, search.hits);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, hits, label, recipe, ingredient);
+        return Objects.hash(id, hits);
     }
 
     @Override
