@@ -1,22 +1,27 @@
-package org.example.models;
+package org.example.models;;
 
+import com.google.gson.*;
+import java.lang.reflect.Type;
 import java.util.Objects;
 
 public class Recommendations {
 
     public Object Result;
 
-    public Recommendations(Object result) {
-        Result = result;
+
+    public Recommendations(Object Result) {
+         super();
+        this.Result = Result;
+    }
+
+    public Recommendations() {
+
     }
 
     public Object getResult() {
         return Result;
     }
 
-    public void setResult(Object result) {
-        Result = result;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -29,6 +34,16 @@ public class Recommendations {
     @Override
     public int hashCode() {
         return Objects.hash(Result);
+    }
+    public static class RecommendationsDeserializerFromJsonUsingObject implements JsonDeserializer<Recommendations> {
+
+        @Override
+        public Recommendations deserialize
+                (JsonElement jElement, Type Object, JsonDeserializationContext context)
+                throws JsonParseException {
+            JsonObject jObject = jElement.getAsJsonObject();
+            return new Recommendations(jObject);
+        }
     }
 
     @Override

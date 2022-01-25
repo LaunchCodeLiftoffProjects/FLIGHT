@@ -33,7 +33,7 @@ public class HealthController {
         Api getTopicInfo = new Api();
         Gson gson2 = new Gson();
        // JsonObject json = new JsonObject();
-        String stringAPI = getTopicInfo.getRecipeInfo(topical);
+        String stringAPI = getTopicInfo.getApiInfo(topical);
         Health topicInfo = gson2.fromJson(stringAPI, Health.class);
 
         model.addAttribute("topics", topicInfo.getResult());

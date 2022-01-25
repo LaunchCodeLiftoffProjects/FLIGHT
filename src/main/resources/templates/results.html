@@ -12,12 +12,12 @@
     <p>Just to check it out</p>
 </th:block>-->
 
-<th:block th:each="result : ${results}">
-    <div th:if="${result.recipe.ingredients[0].foodCategory == 'fruit'}"></div>
-    <div th:each="j, iStat : ${result.recipe.ingredients}">
+<th:block th:each="result : ${results}" th:if="${result.recipe.ingredients[0].foodCategory == 'fruit'}">
+    <!--<div th:each="j, iStat : ${result.recipe.ingredients}">
         <p th:unless="${result.recipe.ingredients[iStat.index].foodCategory == 'fruit'}">We do not have that item.</p>
     </div>
-    <p>Checking it out here, too</p>
+    <p>Checking it out here, too</p>-->
+
     <img  alt="" width="150"  src=""
           th:src="@{${result.recipe.image}}"/>
     <p th:text="${result.recipe.label}" ></p>
@@ -36,7 +36,16 @@
 
 <th:block>
     <div th:each="rec : ${recs}">
-        <p th:text="${rec}"></p>
+        <ol>
+        <li><p th:text="${rec}"></p></li>
+        </ol>
+    </div>
+    </div>
+</th:block>
+
+<th:block>
+    <div th:each="trail : ${trails}">
+        <p th:text="${trail}"></p>
     </div>
 </th:block>
 </body>

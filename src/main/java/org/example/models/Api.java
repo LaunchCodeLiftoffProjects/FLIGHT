@@ -1,13 +1,14 @@
 package org.example.models;
 
 import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class Api {
 
-    public String getRecipeInfo(URI uri) throws Exception{
+    public static String getApiInfo(URI uri) throws Exception{
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder(uri)
                 .GET()
@@ -18,4 +19,5 @@ public class Api {
 
         return response.body();
     }
+
 }

@@ -18,7 +18,7 @@ public class HomeController {
 
     @RequestMapping("bmi")
     public String bmiCalculator(Model model){
-
+       model.addAttribute("title", "Carry on or Checked?");
         return "bmi";
     }
 
