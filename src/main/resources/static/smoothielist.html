@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container body-content">
+    <h2>Smoothie List</h2>
+    <ul>
+        <li th:each="smoothies : ${smoothies}">
+            <a th:href="@{'/view/' + ${smoothies.id}}" th:text="${smoothie.name}"></a>
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>
