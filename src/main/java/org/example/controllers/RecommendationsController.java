@@ -37,12 +37,14 @@ public class RecommendationsController {
         URI recommend = new URI("https://health.gov/myhealthfinder/api/v3/myhealthfinder.json?age="+userAge+"&sex=male");
        String getInfo = Api.getApiInfo(recommend);
         GsonBuilder gsonBldr = new GsonBuilder();
-        gsonBldr.registerTypeAdapter(Recommendations.class, new Recommendations.RecommendationsDeserializerFromJsonUsingObject());
+        gsonBldr.setFieldNamingPolicy(FieldNamingPolicy.IDENTITY).
+                registerTypeAdapter(Recommendations.class, new Recommendations.RecommendationsDeserializerFromJsonUsingObject());
         Recommendations targetObject = gsonBldr.create().fromJson(getInfo, Recommendations.class);
 
             model.addAttribute("recs", targetObject.getResult());
 
         return "results";
     }
+
 
 }

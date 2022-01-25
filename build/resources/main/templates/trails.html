@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<h3>Use this page as a resource to find walking trails. You can search by zip code or alternatively, you can zoom in
+on the map below and see nearby trails. Enjoy your trip!</h3>
+<div th:replace="fragments :: welcomeMessage"></div>
+<div>
+    <form th:action="@{/trails/results}" method = "post">
+        <p>What's your destination?</p>
+        <input type="text" placeholder="Enter your zip" name="zipCode" id="zipCode">
+        <button type="submit">Let's get moving</button>
+    </form>
+</div>
+<div>
+    <!-- BEGIN Hiking Project -->
+    <iframe style="width:100%; max-width:1200px; height:500px;" frameborder="0" scrolling="no" src="https://www.hikingproject.com/widget/map?favs=1&location=ip&x=-10052572&y=4686181&z=6.4&h=500"></iframe>
+    <!-- END Hiking Project -->
+</div>
+</body>
+<footer>
+    hiking locator courtesy of <p><a th:href="@{https://www.hikingproject.com}">Hiking Project</a></p>
+</footer>
+</html>
