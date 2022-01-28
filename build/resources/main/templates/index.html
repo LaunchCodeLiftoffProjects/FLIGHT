@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head">
+    <meta charset="UTF-8">
+   <!-- <title>Fit and Light Home Page</title>-->
+</head>
+
+<body>
+<h2>Welcome to FIT and LIGHT, or as we like to call it: FLIGHT!</h2>
+<p>Here at FLIGHT we believe the body is the temple and it is to be revered as such. Use this page as a resource to
+    find light, healthy snacks (and maybe a cocktail or two) and workouts to fit your lifestyle. You can also search for
+    helpful articles with tips/tricks for the things that you need to be successful and healthy. We're happy to have you here! Please
+    stay in your seats until the light comes on. Now, let's take flight! </p>
+<ul>
+    <li><p>Recipe Search <a th:href="@{/search}">May I offer you some Peanuts?</a></p></li>
+    <li><p>Topic Search <a th:href="@{/topics}">In-FLIGHT Entertainment</a></p></li>
+    <li><p>Health Recommendations Search <a th:href="@{/recommendations}">Buckle Up!</a></p></li>
+    <li><p>Body Mass Index Calculator <a th:href="@{/bmi}">Pack Light</a></p></li>
+    <li><p>Accessible-Friendly Trails<a th:href="@{/trails}">Please don't block the aisle</a></p></li>
+</ul>
+
+</body>
+</html>
