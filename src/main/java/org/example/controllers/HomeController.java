@@ -5,9 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("")
+@RequestMapping("index")
 public class HomeController {
 
+    @RequestMapping(" ")
     public String homePage(Model model){
          String userName = "Guest";
 

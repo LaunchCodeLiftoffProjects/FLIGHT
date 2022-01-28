@@ -6,16 +6,13 @@ import java.util.Objects;
 
 public class Recommendations {
 
+
     public Object Result;
 
 
     public Recommendations(Object Result) {
          super();
         this.Result = Result;
-    }
-
-    public Recommendations() {
-
     }
 
     public Object getResult() {
@@ -35,16 +32,21 @@ public class Recommendations {
     public int hashCode() {
         return Objects.hash(Result);
     }
+/*@Override
+    public int hashCode() {
+        return Objects.hash(Result);
+    }
     public static class RecommendationsDeserializerFromJsonUsingObject implements JsonDeserializer<Recommendations> {
 
-        @Override
+      / @Override
         public Recommendations deserialize
                 (JsonElement jElement, Type Object, JsonDeserializationContext context)
                 throws JsonParseException {
             JsonObject jObject = jElement.getAsJsonObject();
             return new Recommendations(jObject);
         }
-    }
+    }*/
+
 
     @Override
     public String toString() {
@@ -52,3 +54,4 @@ public class Recommendations {
         return "I ADDED THIS FOR: " + Result;
     }
 }
+

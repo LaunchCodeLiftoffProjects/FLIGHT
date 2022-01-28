@@ -23,9 +23,9 @@ import java.net.URI;
 @RequestMapping("recommendations")
 public class RecommendationsController {
 
-    @RequestMapping("")
+    @RequestMapping(value = "/ ", headers = "Accept=application/json")
     public String search(Model model) {
-        model.addAttribute("title", "The Flight - no Goldblum");
+        model.addAttribute("title", "The Fly-ght - no Goldblum");
         model.addAttribute("name", "Guest");
         return "recommendations";
     }
@@ -36,15 +36,17 @@ public class RecommendationsController {
 
         URI recommend = new URI("https://health.gov/myhealthfinder/api/v3/myhealthfinder.json?age="+userAge+"&sex=male");
        String getInfo = Api.getApiInfo(recommend);
-        GsonBuilder gsonBldr = new GsonBuilder();
-        gsonBldr.setFieldNamingPolicy(FieldNamingPolicy.IDENTITY).
-                registerTypeAdapter(Recommendations.class, new Recommendations.RecommendationsDeserializerFromJsonUsingObject());
-        Recommendations targetObject = gsonBldr.create().fromJson(getInfo, Recommendations.class);
-
-            model.addAttribute("recs", targetObject.getResult());
+       /* Gson gsonOfGson = new GsonBuilder()
+                .registerTypeAdapter(Recommendations.class, new Recommendations.RecommendationsDeserializerFromJsonUsingObject())
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .setPrettyPrinting()
+                .create();
+        Recommendations health = gsonOfGson.fromJson(getInfo, Recommendations.class);*/
+        Gson he = new Gson();
+        Recommendations healthyLiving = he.fromJson(getInfo, Recommendations.class);
+            model.addAttribute("recs", healthyLiving.getResult());
 
         return "results";
     }
-
 
 }

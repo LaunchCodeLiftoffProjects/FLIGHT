@@ -3,6 +3,7 @@ package org.example.models;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Smoothies extends AbstractEntity {
@@ -12,15 +13,20 @@ public class Smoothies extends AbstractEntity {
 
     private String smoothieRecipe;
 
-    public Smoothies(String smoothieRecipe) { this.smoothieRecipe=smoothieRecipe; }
+    public Smoothies(String smoothieRecipe) {
+        this.smoothieRecipe=smoothieRecipe;
+    }
 
     public Smoothies(){}
 
     public String getSmoothieRecipe() {
+
         return smoothieRecipe;
     }
 
     public void setSmoothieRecipe(String smoothieRecipe) {
+
         this.smoothieRecipe = smoothieRecipe;
     }
+
 }
