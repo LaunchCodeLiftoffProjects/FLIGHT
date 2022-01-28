@@ -1,10 +1,10 @@
 package org.example.models.data;
 
-
+import org.example.models.User;
 import org.springframework.data.repository.CrudRepository;
-import org.example.models.Smoothies;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IngredientsRepository extends CrudRepository<Smoothies, Integer> {
+public interface UserRepository extends CrudRepository<User, Integer> {
+    User findByUsername(String username);
 }
