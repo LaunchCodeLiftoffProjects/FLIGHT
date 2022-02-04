@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -67,14 +67,13 @@
     
    <div class="box">
        <ul type="none">
-           <li><a href=""> Home</a></li>
-           <li><a href=""> About us</a></li>
-           <li><a href=""> Smoothies</a></li>
-           <li><a href=""> Juices</a></li>
-           <li><a href=""> Add Recipes</a></li>
-           <li><a href=""> Search</a></li>
+           <li class="active"><a th:href=""> Home</a></li>
+           <li><a th:href=""> About us</a></li>
+           <li><a th:href=""> Smoothies</a></li>
+           <li><a th:href=""> Juices</a></li>
+           <li><a th:href=""> Add Recipes</a></li>
+           <li class="active"><a th:href=""> Search</a></li>
         </ul>
-
 
    </div> 
 

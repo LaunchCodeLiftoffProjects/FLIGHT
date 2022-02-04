@@ -12,21 +12,25 @@
     <p>Just to check it out</p>
 </th:block>-->
 
-<th:block th:each="result : ${results}" th:if="${result.recipe.ingredients[0].foodCategory == 'fruit'}">
-    <!--<div th:each="j, iStat : ${result.recipe.ingredients}">
-        <p th:unless="${result.recipe.ingredients[iStat.index].foodCategory == 'fruit'}">We do not have that item.</p>
-    </div>
-    <p>Checking it out here, too</p>-->
 
-    <img  alt="" width="150"  src=""
-          th:src="@{${result.recipe.image}}"/>
-    <p th:text="${result.recipe.label}" ></p>
+<th:block th:each="result : ${results}" th:if="${result.recipe.ingredients[0].foodCategory == 'fruit'}">
+    <img  alt="" width="150"  src="" th:src="@{${result.recipe.image}}"/>
+<!--|window.location.href='@{/favorites}'||@{addFavoriteSmoothieToDatabase()}|-->
+    <form th:action="@{/favorites}" th:object="${userRepository}" method="post">
+    <p><input type="checkbox" name="favoriteSmoothieName" th:checked="${myBoolean}"  th:value="${favoriteSmoothie == result.recipe.label}"
+       th:hidden="${id}" th:text="${id}"/>Add to favorites?</p>
+    </form>
+        <p th:text="${result.recipe.label}" ></p>
     <div th:each="i, iStat : ${result.recipe.ingredientLines}">
         <ul>
             <li th:text="${result.recipe.ingredientLines[iStat.index]}"></li>
         </ul>
     </div>
+    <div>
+        <p> <a th:href="@{/favorites}">go to favorites page</a></p>
+    </div>
 </th:block>
+
 
 <th:block>
 <div th:each="topic : ${topics}">
@@ -36,18 +40,13 @@
 
 <th:block>
     <div th:each="rec : ${recs}">
-        <ol>
-        <li><p th:text="${rec}"></p></li>
-        </ol>
+        <ul>
+        <li th:text="${rec.title}"></li>
+        </ul>
     </div>
     </div>
 </th:block>
 
-<th:block>
-    <div th:each="trail : ${trails}">
-        <p th:text="${trail}"></p>
-    </div>
-</th:block>
 </body>
 
 </html>
