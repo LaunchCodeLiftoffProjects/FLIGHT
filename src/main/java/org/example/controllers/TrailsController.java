@@ -22,16 +22,4 @@ public class TrailsController {
         return "trails";
     }
 
-   /* @PostMapping("results")
-    public String getHikingTrails(@ModelAttribute ParkTopics parkTopics, @ModelAttribute Api api, @RequestParam String topic, Model model) throws Exception {
-        URI  parkInfo = new URI("https://developer.nps.gov/api/v1/articles?q="+topic+"&api_key=sr0wQuoZ9xpQUFdC1IWl7k3oKaYxweONJNJcw6b3");
-
-        String moveYourBody = new Api().getApiInfo(parkInfo);
-        ParkTopics letsTalk = new Gson().fromJson(moveYourBody, ParkTopics.class);
-
-        model.addAttribute("trails", letsTalk.getData());
-
-        return "results";
-    }*/
-
 }

@@ -9,9 +9,9 @@
     <div th:each="topic : ${topics}" th:unless="${topic.listingDescription == 'text'}">
         <img  alt="" width="150"  src="" th:src="@{${topic.listingImage.url}} "/>
         <ul>
-      <li><p th:text="|Title of Article: ${topic.title}|">No Title Available</p></li>
-            <li><p th:text="|Brief Description: ${topic.listingDescription}"|>No Description Available</p></li>
+     <b><li><p th:text="|Title of Article: ${topic.title}|">No Title Available</p></li></b>
             <li><a th:href="@{${topic.url}}">Click here to read this article!</a></li>
+            <p th:text="|Brief Description: ${topic.listingDescription}"|>No Description Available</p>
          <br>
         </ul>
     </div>

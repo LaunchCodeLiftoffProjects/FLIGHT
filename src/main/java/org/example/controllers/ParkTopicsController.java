@@ -26,7 +26,8 @@ public class ParkTopicsController {
     @PostMapping("results")
     public String getHikingTrails(@ModelAttribute ParkTopics parkTopics, @ModelAttribute Api api, @RequestParam String topic, Model model) throws Exception {
 
-        URI parkInfo = new URI("https://developer.nps.gov/api/v1/articles?q="+ConcatSearchParameter.concatSearchParameterApi(topic)+"&api_key=sr0wQuoZ9xpQUFdC1IWl7k3oKaYxweONJNJcw6b3");
+        String credentialsNeeded = "&api_key=sr0wQuoZ9xpQUFdC1IWl7k3oKaYxweONJNJcw6b3";
+        URI parkInfo = new URI("https://developer.nps.gov/api/v1/articles?q="+ConcatSearchParameter.concatSearchParameterApi(topic)+credentialsNeeded);
 
         String moveYourBody = Api.getApiInfo(parkInfo);
         ParkTopics letsTalk = new Gson().fromJson(moveYourBody, ParkTopics.class);
