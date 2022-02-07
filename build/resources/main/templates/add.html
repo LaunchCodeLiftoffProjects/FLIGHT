@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container  body-content">
+<h1>Add Smoothie Recipe</h1>
+
+<form method="post" style="max-width:600px;">
+    <div class="form-group">
+        <label th:for="name">Name of Recipe</label>
+        <input class="form-control" th:field="${smoothies.name}" />
+        <span th:errors="${smoothies.name}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="ingredients">Ingredients</label>
+        <input class="form-control" th:field="${smoothies.ingredients}" />
+        <span th:errors="${smoothies.ingredients}" class="error"></span>
+    </div>
+
+
+    <input type="submit" value="Add Recipe" />
+</form>
+
+<div th:each="ingredient: ${ingredients}">
+    <ul>
+    <li><b><p th:text="${ingredient}"></p></b></li>
+    <p th:text="${ingredient.ingredients}"></p>
+    </ul>
+</div>
+
+</body>
+</html>
