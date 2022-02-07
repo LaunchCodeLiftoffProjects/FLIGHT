@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="fragments :: welcomeMessage"></div>
+<div>
+   <form th:action="@{/parktopics/results}" method = "post">
+      <p>Vitamin D is an essential vitamin that helps regulate calcium and phosphorus in the body.
+          It also plays a role in maintaining proper bone structure. It occurs naturally in a few foods (some fish, fish liver oils,
+          egg yolks, fortified dairy and grain products) but the most common way that we get this 'Sunshine Vitamin' is to
+          go outside and let the sun rays shine down on us. On this page, you can search for articles composed by the <a th:href="@{https://www.nps.gov/index.htm}">
+              National Park Service</a> that will hopefully lead you to some outside activity suggestions.</p>
+      <input type="text" placeholder="Where's your destination?" name="topic" id="topic">
+      <button type="submit" for="topic">Let's get moving</button>
+   </form>
+</div>
+</body>
+</html>
