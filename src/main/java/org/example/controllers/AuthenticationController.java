@@ -108,6 +108,7 @@ public class AuthenticationController {
             return "login";
         }
 
+
         String password = loginFormDTO.getPassword();
 
         if (!theUser.isMatchingPassword(password)) {
