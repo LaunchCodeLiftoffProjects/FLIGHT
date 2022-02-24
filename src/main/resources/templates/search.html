@@ -1,38 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
-<head th:replace="fragments :: head">
+<head>
     <meta charset="UTF-8">
-    <!--<title>Search Recipes</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
-
-<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FLIGHT!</title>
     <link rel="stylesheet" href="style.css">
+    <title>Menu</title>
+    <style>
+        body {
+        background-color: linen;
+        text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="trails.html">Trails</a></li>
-                <li><a href="search.html">Recipe Search</a></li>
-                <li><a href="parktopics/topicsearch.html">Topic Search</a></li>
-                <li><a href="add.html">Add Recipe</a></li>
-                <li><a href="bmi.html">Body Mass Index Calculator</a></li>
-                
-            
-           
-        </ul>
-    </nav>  
-    <h1>May I offer you some Peanuts?</h1>
-   
+<div th:include="fragments :: nav-bar"></div>
+    <h1>Welcome to the Recipe Search! May I offer you some Peanuts?</h1>
+
+<p>One of the most popular New Year Resolutions each year is to lose weight. But diet is not exclusively about losing weight.
+    Ones diet is simply their food and drink intake. The reason many of what we call 'weight loss diets' fail is because
+    they are based on short-term trends. You will be in your body for a lifetime, therefore, your eating habits should be
+    able to be maintained for that lifetime. </p>
 
  
 <div>
-    <h1 th:text="|Hello ${name}|"></h1>
+    <p></p>
     
 </div>
 

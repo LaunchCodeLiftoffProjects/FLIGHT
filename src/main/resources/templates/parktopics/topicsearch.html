@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
-   <!-- <meta charset="UTF-8">
-    <title>Title</title> -->
-
 <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLIGHT!</title>
     <link rel="stylesheet" href="style.css">
+    <title>Fun in the Sun</title>
+    <style>
+        body {
+        background-color: linen;
+        text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="trails.html">Trails</a></li>
-                <li><a href="search.html">Recipe Search</a></li>
-                <li><a href="parktopics/topicsearch.html">Topic Search</a></li>
-                <li><a href="add.html">Add Recipe</a></li>
-                <li><a href="bmi.html">Body Mass Index Calculator</a></li>
-            
-                
-           
-        </ul>
-    </nav>  
+<div th:include="fragments :: nav-bar"></div>
     <h1>In-FLIGHT Entertainment</h1>
 
-<div th:replace="fragments :: welcomeMessage"></div>
+
 <div>
    <form th:action="@{/parktopics/results}" method = "post">
       <p>Vitamin D is an essential vitamin that helps regulate calcium and phosphorus in the body.
