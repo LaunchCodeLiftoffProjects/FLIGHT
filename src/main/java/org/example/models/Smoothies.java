@@ -10,6 +10,11 @@ public class Smoothies extends AbstractEntity {
     //@OneToMany
     //@JoinColumn(name = "user_id")
 
+    @ManyToMany
+    private List<User> users;
+
+    private String apiID;
+
     private String smoothieRecipe;
 
     private String ingredients;
@@ -32,5 +37,13 @@ public class Smoothies extends AbstractEntity {
 
     public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 }

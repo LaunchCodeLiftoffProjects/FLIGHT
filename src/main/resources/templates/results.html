@@ -19,6 +19,7 @@
         <button type="submit">Add to favorites?</button>
     </form>
 
+
         <p th:text="${result.recipe.label}" ></p>
     <div th:each="i, iStat : ${result.recipe.ingredientLines}">
         <ul>

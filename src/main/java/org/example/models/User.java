@@ -3,15 +3,24 @@ package org.example.models;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class User extends AbstractEntity {
+
     @NotNull
     private String username;
 
     @NotNull
     private String pwHash;
+
+    @ManyToMany
+    private List<Smoothies> favorites;
 
     public User() {}
 
@@ -25,5 +34,13 @@ public class User extends AbstractEntity {
 
     public boolean isMatchingPassword(String password) {
         return encoder.matches(password, pwHash);
+    }
+
+    public List<Smoothies> getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(List<Smoothies> favorites) {
+        this.favorites = favorites;
     }
 }
