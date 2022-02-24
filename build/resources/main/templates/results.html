@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
-<head th:replace="fragments :: head">
+<head>
+    <title>Recipe Results</title>
     <meta charset="UTF-8">
+    <style>
+        body {
+        background-color: linen;
+        text-align: center;
+        }
+    </style>
 </head>
 
 <body>
 
-<!--<th:block th:each="result : ${results}" th:if="${result == ' '}">
-    <p>We do not have that item</p>
-    <p>Just to check it out</p>
-</th:block>-->
 
 
 <th:block th:each="result : ${results}" th:if="${result.recipe.ingredients[0].foodCategory == 'fruit'}">
+
     <img  alt="" width="150"  src="" th:src="@{${result.recipe.image}}"/>
+
+    <form th:action="@{/favorites}" th:object="${newFavorite}" method="post">
+        <p th:text="${result.recipe.uri}"></p>
+        <input type="submit" th:hidden="${result.recipe.uri}" name="newFavorite" >
+        <button type="submit">Add to favorites?</button>
+    </form>
+
+
         <p th:text="${result.recipe.label}" ></p>
     <div th:each="i, iStat : ${result.recipe.ingredientLines}">
         <ul>

@@ -16,10 +16,10 @@ import java.net.URI;
 @RequestMapping("parktopics")
 public class ParkTopicsController {
 
-    @RequestMapping("")
+    @RequestMapping(" ")
     public String search(Model model) {
         model.addAttribute("title", "Flying down the path");
-        model.addAttribute("name", "Guest");
+
         return "parktopics/topicsearch";
     }
 

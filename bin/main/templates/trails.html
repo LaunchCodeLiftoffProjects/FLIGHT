@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+    <!--<meta charset="UTF-8">-->
+
+
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLIGHT!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trails.html">Trails</a></li>
+                <li><a href="search.html">Recipe Search</a></li>
+                <li><a href="parktopics/topicsearch.html">Topic Search</a></li>
+                <li><a href="add.html">Add Recipe</a></li>
+                <li><a href="bmi.html">Body Mass Index Calculator</a></li>
+                
+           
+        </ul>
+    </nav>  
+    <h1>Please don't block the aisle</h1> 
+
+    
+<h3>An integral piece of staying fit and healthy is to get your body moving. While a full on exercise routine sounds great,
+   we do not want to discount the benefit of simply walking! Walking a few times a week for 20-30 minutes can greatly improve
+    respiratory function as well as drop some pounds at a safe pace when coupled with a healthy diet. Plus, if you have
+    a four-legged walking companion, they would benefit as well. It's a win-win for everyone!
+    Use this page as a resource to find walking trails. Zoom in on the map below and see trails nearby to your location. Enjoy your trip!</h3>
+
+<div>
+    <!-- BEGIN Hiking Project -->
+    <iframe style="width:100%; max-width:1200px; height:500px;" frameborder="0" scrolling="no" src="https://www.hikingproject.com/widget/map?favs=1&location=ip&x=-10052572&y=4686181&z=6.4&h=500"></iframe>
+    <!-- END Hiking Project -->
+</div>
+</body>
+<footer>
+    <p>hiking locator courtesy of <a th:href="@{https://www.hikingproject.com}">Hiking Project</a></p>
+</footer>
+</html>

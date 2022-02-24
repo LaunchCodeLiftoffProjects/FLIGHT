@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+<div>
+    <form>
+        <li th:each="@{/favorites}" th:object="@{/favorites}" method="post">
+
+        </li>
+
+    </form>
+</div>
+
+</body>
+</html>
