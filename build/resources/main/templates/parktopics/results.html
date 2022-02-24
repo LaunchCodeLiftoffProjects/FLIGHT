@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th:block>
+    <div th:each="topic : ${topics}" th:unless="${topic.listingDescription == 'text'}">
+        <img  alt="" width="150"  src="" th:src="@{${topic.listingImage.url}} "/>
+        <ul>
+     <b><li><p th:text="|Title of Article: ${topic.title}|">No Title Available</p></li></b>
+            <li><a th:href="@{${topic.url}}">Click here to read this article!</a></li>
+            <p th:text="|Brief Description: ${topic.listingDescription}"|>No Description Available</p>
+         <br>
+        </ul>
+    </div>
+</th:block>
+</body>
+</html>
