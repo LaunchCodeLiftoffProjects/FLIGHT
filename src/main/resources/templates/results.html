@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
-<head th:replace="fragments :: head">
+<head>
+    <title>Recipe Search Results</title>
     <meta charset="UTF-8">
+    <style>
+        body {
+        background-color: linen;
+        text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,19 +20,12 @@
 
     <img  alt="" width="150"  src="" th:src="@{${result.recipe.image}}"/>
 
-    <form th:action="@{/favorites}" th:object="${newFavorite}" method="post">
-        <p th:text="${result.recipe.uri}"></p>
-        <input type="submit" th:hidden="${result.recipe.uri}" name="newFavorite" >
-        <button type="submit">Add to favorites?</button>
-    </form>
-
         <p th:text="${result.recipe.label}" ></p>
     <div th:each="i, iStat : ${result.recipe.ingredientLines}">
-        <ul>
-            <li th:text="${result.recipe.ingredientLines[iStat.index]}"></li>
-        </ul>
+
+            <p th:text="${result.recipe.ingredientLines[iStat.index]}"></p>
+
     </div>
-    <div th:text="${result}"></div>
 </th:block>
 
 </body>
