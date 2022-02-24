@@ -1,8 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
-<body class="container  body-content">
-<h1>Add Smoothie Recipe</h1>
+<head>
+<title>Add Recipe</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Add Recipe</title>
+    <style>
+        body {
+        background-color: linen;
+        text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+<div th:include="fragments :: nav-bar"></div>
+    <h1>Don't see what you need on our menu?</h1>
+<p>Here at FLIGHT, you are more than welcome to carry-on your own snacks. Please feel free to enter your
+favorite recipes below.</p>
+
 
 <form method="post" style="max-width:600px;">
     <div class="form-group">

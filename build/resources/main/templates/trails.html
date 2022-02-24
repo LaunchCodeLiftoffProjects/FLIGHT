@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head th:replace="fragments :: head">
+<head>
     <meta charset="UTF-8">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bon Voyage</title>
+    <style>
+        body {
+        background-color: linen;
+        text-align: center;
+        }
+    </style>
 </head>
 <body>
+<div th:include="fragments :: nav-bar"></div>
+    <h1>Please don't block the aisle</h1> 
+
+    
 <h3>An integral piece of staying fit and healthy is to get your body moving. While a full on exercise routine sounds great,
    we do not want to discount the benefit of simply walking! Walking a few times a week for 20-30 minutes can greatly improve
     respiratory function as well as drop some pounds at a safe pace when coupled with a healthy diet. Plus, if you have

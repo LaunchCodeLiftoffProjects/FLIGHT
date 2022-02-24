@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head">
+    <meta charset="UTF-8">
+
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLIGHT!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trails.html">Trails</a></li>
+                <li><a href="search.html">Recipe Search</a></li>
+                <li><a href="topicsearch.html">Topic Search</a></li>
+                <li><a href="add.html">Add Recipe</a></li>
+                <li><a href="recommendations.html">Health Recommendations Search</a></li>
+                <li><a href="bmi.html">Body Mass Index Calculator</a></li>
+            
+           
+        </ul>
+    </nav>  
+    <h1>Buckle Up!</h1>
+<div th:replace="fragments :: welcomeMessage"></div>
+<div>
+    <form th:action="@{/recommendations/results}" method = "post">
+        <input type="text" placeholder="Enter your age" name="userAge" id="userAge">
+        <input type="text" placeholder="Enter: Male or Female?" name="sex" id="sex">
+        <button type="submit">Flight or Flight Response</button>
+    </form>
+</div>
+</body>
+</html>
