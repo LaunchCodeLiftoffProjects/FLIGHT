@@ -2,18 +2,36 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where you going?</title>
+    <style>
+        body {
+        background-color: linen;
+        text-align: center;
+        }
+        section { margin-bottom: 40px; }
+    </style>
 </head>
 <body>
+<section>
+    <a href="/" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;">Home</a>
+    <a th:href="@{/trails}" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;">Trails</a>
+    <a th:href="@{/search}" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;" >Recipe Search</a>
+    <a th:href="@{/parktopics}" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;">Topic Search</a>
+    <a th:href="@{/add}" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;">Add Recipe</a>
+    <a th:href="@{/bmi}" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;">Body Mass Index Calculator</a>
+</section>
+
 <th:block>
     <div th:each="topic : ${topics}" th:unless="${topic.listingDescription == 'text'}">
         <img  alt="" width="150"  src="" th:src="@{${topic.listingImage.url}} "/>
-        <ul>
-     <b><li><p th:text="|Title of Article: ${topic.title}|">No Title Available</p></li></b>
-            <li><a th:href="@{${topic.url}}">Click here to read this article!</a></li>
+
+     <b><p th:text="|Title of Article: ${topic.title}|">No Title Available</p></b>
+            <p><a th:href="@{${topic.url}}">Click here to read this article!</a></p>
             <p th:text="|Brief Description: ${topic.listingDescription}"|>No Description Available</p>
          <br>
-        </ul>
+
     </div>
 </th:block>
 </body>

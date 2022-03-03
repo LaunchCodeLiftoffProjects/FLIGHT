@@ -2,29 +2,42 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
 <head>
-    <title>Recipe Search Results</title>
+    <title>Recipe Results</title>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
         background-color: linen;
         text-align: center;
         }
+         section { margin-bottom: 40px; }
     </style>
 </head>
 
 <body>
+<section>
+    <a href="/" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;">Home</a>
+    <a th:href="@{/trails}" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;">Trails</a>
+    <a th:href="@{/search}" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;" >Recipe Search</a>
+    <a th:href="@{/parktopics}" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;">Topic Search</a>
+    <a th:href="@{/add}" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;">Add Recipe</a>
+    <a th:href="@{/bmi}" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;">Body Mass Index Calculator</a>
+</section>
 
+<h2 th:text="|We hope that you enjoy your ${desiredItem}!|"></h2><br>
 
-
-<th:block th:each="result : ${results}" th:if="${result.recipe.ingredients[0].foodCategory == 'fruit'}">
-
+<th:block th:each="result : ${results}" th:if="${result.recipe.ingredients[0].foodCategory} == 'fruit' or ${result.recipe.ingredients[0].foodCategory} == 'vegetables'">
+    <div>
+<p th:unless="${result.recipe.ingredients[0].foodCategory} == 'fruit' or ${result.recipe.ingredients[0].foodCategory} == 'vegetables'">I'm sorry, we don't have that item on this particular flight.</p>
+    </div>
     <img  alt="" width="150"  src="" th:src="@{${result.recipe.image}}"/>
 
         <p th:text="${result.recipe.label}" ></p>
     <div th:each="i, iStat : ${result.recipe.ingredientLines}">
 
             <p th:text="${result.recipe.ingredientLines[iStat.index]}"></p>
-        
+
     </div>
 </th:block>
 

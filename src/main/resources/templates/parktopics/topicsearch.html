@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
-   <!-- <meta charset="UTF-8">
-    <title>Title</title> -->
-
 <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLIGHT!</title>
     <link rel="stylesheet" href="style.css">
+    <title>Fun in the Sun</title>
+    <style>
+        body {
+        background-image: url('https://www.cityofgreen.org/ImageRepository/Document?documentID=1341');
+        background-size: cover;
+        text-align: center;
+        }
+        h1, h3 {  color: linen;  }
+        a:link { color: orange; }
+        a:visited { color: yellow; }
+    </style>
 </head>
 <body>
-    <nav>
-        <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="trails.html">Trails</a></li>
-                <li><a href="search.html">Recipe Search</a></li>
-                <li><a href="parktopics/topicsearch.html">Topic Search</a></li>
-                <li><a href="add.html">Add Recipe</a></li>
-                <li><a href="bmi.html">Body Mass Index Calculator</a></li>
-            
-                
-           
-        </ul>
-    </nav>  
+<div th:include="fragments :: nav-bar"></div>
     <h1>In-FLIGHT Entertainment</h1>
 
-<div th:replace="fragments :: welcomeMessage"></div>
+
 <div>
    <form th:action="@{/parktopics/results}" method = "post">
-      <p>Vitamin D is an essential vitamin that helps regulate calcium and phosphorus in the body.
+      <h3>Vitamin D is an essential vitamin that helps regulate calcium and phosphorus in the body.
           It also plays a role in maintaining proper bone structure. It occurs naturally in a few foods (some fish, fish liver oils,
           egg yolks, fortified dairy and grain products) but the most common way that we get this 'Sunshine Vitamin' is to
           go outside and let the sun rays shine down on us. On this page, you can search for articles composed by the <a th:href="@{https://www.nps.gov/index.htm}">
-              National Park Service</a> that will hopefully lead you to some outside activity suggestions.</p>
+              National Park Service</a> that will hopefully lead you to some outside activity suggestions.</h3>
       <input type="text" placeholder="Where's your destination?" name="topic" id="topic">
       <button type="submit" for="topic">Let's get moving</button>
    </form>

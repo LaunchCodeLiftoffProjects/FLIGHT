@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AuthenticationFilter extends HandlerInterceptorAdapter {
-    private static final List<String> whitelist = Arrays.asList("/login", "/register", "/logout", "/css", "/index", "/search",
+    private static final List<String> whitelist = Arrays.asList("/login", "/register", "/logout", "/css", "/search",
             "/", "/error", "/bmi", "/recommendations", "/results", "/trails", "/health");
 
     @Autowired

@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head">
-<link rel="stylesheet" href="style.css">
+<head>
 <title>Add Recipe</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Add Recipe</title>
+    <style>
+          html {
+          min-height: 100%;
+           }
+        body {
+         background: linear-gradient(to bottom, #666699 0%, #ff9966 100%);
+        text-align: center;
+        }
+        h1, h3, label {  color: linen;  }
+        p { color: linen; }
+        label, input { align-items: center; }
+    </style>
 </head>
 
-<body class="container  body-content">
+<body>
+<div th:include="fragments :: nav-bar"></div>
+    <h1>Don't see anything you like on our menu?</h1>
+<h3>Here at FLIGHT, you are more than welcome to carry-on your own snacks. Please feel free to enter your
+favorite recipes below.</h3>
 
-    <nav>
-        <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="trails.html">Trails</a></li>
-                <li><a href="search.html">Recipe Search</a></li>
-                <li><a href="parktopics/topicsearch.html">Topic Search</a></li>
-                <li><a href="add.html">Add Recipe</a></li>
-                <li><a href="bmi.html">Body Mass Index Calculator</a></li>
-                
-            
-           
-        </ul>
-    </nav>  
-    <h1>Carry On Snacks</h1>
-<h2>Add Smoothie Recipe</h2>
 
 <form method="post" style="max-width:600px;">
     <div class="form-group">
@@ -41,10 +46,9 @@
 </form>
 
 <div th:each="ingredient: ${ingredients}">
-    <ul>
-    <li><b><p th:text="${ingredient}"></p></b></li>
+
+    <b><p th:text="${ingredient}"></p></b>
     <p th:text="${ingredient.ingredients}"></p>
-    </ul>
 </div>
 
 </body>

@@ -2,17 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org/">
 
 <head th:fragment="head">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link th:href="@{/bootstrap.css}" rel="stylesheet" />
-    <title th:text="'Flight' + ${title == null ? '' : ' :: ' + title}">Let's Take Flight</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<div th:fragment="welcomeMessage">
-    <h1 th:text="|Hello ${name}|"></h1>
-</div>
 <div th:fragment="nav-bar">
-    <p><a th:href="@{/index}">Take the Red-eye Home</a></p>
+            <a href="/" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;">Home</a>
+            <a href="trails" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;">Trails</a>
+            <a href="search" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;">Recipe Search</a>
+            <a href="parktopics" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;">Topic Search</a>
+            <a href="add" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;">Add Recipe</a>
+            <a href="bmi" style="display: inline-block; margin-right:25px; font-size:1.3em; color:orange;">Body Mass Index Calculator</a>
 </div>
 </body>
 </html>

@@ -35,7 +35,7 @@ import java.net.URI;
             Search recipeApi = gson.fromJson(Api.getApiInfo(url), Search.class);
 
            model.addAttribute("results", recipeApi.getHits());
-
+           model.addAttribute("desiredItem", searchString);
 
             return "results";
         }
