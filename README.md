@@ -1,1 +1,1 @@
-# round-two
+A health and fitness website with an interactive recipe search, article search, trail find and bmi calculator. As of 2-24-22 this is the MVP. We all have great ideas of what to add to the site and we look forward to implementing them over the next few months. And as we learn more, we'll undoubtedly come back and add more cool features. 
