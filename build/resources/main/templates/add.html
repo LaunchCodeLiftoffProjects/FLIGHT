@@ -8,19 +8,24 @@
     <link rel="stylesheet" href="style.css">
     <title>Add Recipe</title>
     <style>
+          html {
+          min-height: 100%;
+           }
         body {
-        background-color: linen;
+         background: linear-gradient(to bottom, #666699 0%, #ff9966 100%);
         text-align: center;
         }
-
+        h1, h3, label {  color: linen;  }
+        p { color: linen; }
+        label, input { align-items: center; }
     </style>
 </head>
 
 <body>
 <div th:include="fragments :: nav-bar"></div>
-    <h1>Don't see what you need on our menu?</h1>
-<p>Here at FLIGHT, you are more than welcome to carry-on your own snacks. Please feel free to enter your
-favorite recipes below.</p>
+    <h1>Don't see anything you like on our menu?</h1>
+<h3>Here at FLIGHT, you are more than welcome to carry-on your own snacks. Please feel free to enter your
+favorite recipes below.</h3>
 
 
 <form method="post" style="max-width:600px;">
@@ -41,10 +46,9 @@ favorite recipes below.</p>
 </form>
 
 <div th:each="ingredient: ${ingredients}">
-    <ul>
-    <li><b><p th:text="${ingredient}"></p></b></li>
+
+    <b><p th:text="${ingredient}"></p></b>
     <p th:text="${ingredient.ingredients}"></p>
-    </ul>
 </div>
 
 </body>
