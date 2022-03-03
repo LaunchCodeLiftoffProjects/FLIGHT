@@ -33,19 +33,14 @@
     </div>
     <img  alt="" width="150"  src="" th:src="@{${result.recipe.image}}"/>
 
-    <form th:action="@{/favorites}" th:object="${newFavorite}" method="post">
-        <p th:text="${result.recipe.uri}"></p>
-        <input type="submit" th:hidden="${result.recipe.uri}" name="newFavorite" >
-        <button type="submit">Add to favorites?</button>
-    </form>
 
         <p th:text="${result.recipe.label}" ></p>
     <div th:each="i, iStat : ${result.recipe.ingredientLines}">
-        <ul>
-            <li th:text="${result.recipe.ingredientLines[iStat.index]}"></li>
-        </ul>
+
+            <p th:text="${result.recipe.ingredientLines[iStat.index]}"></p>
+
     </div>
-    <div th:text="${result}"></div>
+
 </th:block>
 
 </body>

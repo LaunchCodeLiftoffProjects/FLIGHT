@@ -33,12 +33,14 @@
     </div>
     <img  alt="" width="150"  src="" th:src="@{${result.recipe.image}}"/>
 
+
         <p th:text="${result.recipe.label}" ></p>
     <div th:each="i, iStat : ${result.recipe.ingredientLines}">
 
             <p th:text="${result.recipe.ingredientLines[iStat.index]}"></p>
 
     </div>
+
 </th:block>
 
 </body>
