@@ -8,26 +8,30 @@
     <title>BMI</title>
     <style>
         body {
-        background-color: linen;
+         background: linear-gradient(to bottom, #666699 0%, #ff9966 100%);
         text-align: center;
         }
+        table{ text-align: center; }
+        h1, h2, h3 {  color: linen;  }
     </style>
 </head>
 
 <body>
-  <div th:include="fragments :: nav-bar"></div>
+<div th:include="fragments :: nav-bar"></div>
+
 <h1>Pack Light</h1>
 
 <div>
-    <h2>Welcome to the Body Mass Index calculator.</h2>
-    <p>BMI is a measure of body size and is useful in determining overweight and obesity, although it is not a perfect
+    <h2>Welcome to the Body Mass Index calculator</h2>
+    <h3>BMI is a measure of body size and is useful in determining overweight and obesity, although it is not a perfect
         system. Your value is based off of the mass and height of your body. Below, please enter your height in feet/inches
        and your weight in pounds. Once you receive your results, you can find the corresponding value in the
-        chart below the calculator to give you some insight on where to take your health journey next. </p>
+        chart below the calculator to give you some insight on where to take your health journey next. </h3>
 <iframe src="https://www.mealpro.net/bmi/?color=1e67c5" frameborder="0" width="700" height="360" style="max-width: 100%"></iframe>
 </div>
 <div>
-<h2>Analyze your results: </h2>
+<h2 style="color: black;">Analyze your results:</h2>
+    <h4>(click on your result for more info)</h4>
     <table>
         <thead>
         <tr>
@@ -37,24 +41,24 @@
         </thead>
         <tbody>
         <tr>
-            <th scope="row">Underweight</th>
+            <th scope="row"><a th:href="@{https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/expert-answers/underweight/faq-20058429}">Underweight</a></th>
             <td><18.5</td>
         </tr>
         <tr>
-            <th scope="row">Normal</th>
+            <th scope="row"><a th:href="@{https://reverehealth.com/live-better/tips-to-maintain-a-healthy-weight/}">Normal</a></th>
             <td>18.5-24.9</td>
         </tr>
         <tr>
-            <th scope="row">Overweight</th>
+            <th scope="row"><a th:href="@{https://www.everydayhealth.com/diet-nutrition/bmi/how-you-reduce-your-bmi-science-backed-steps/}">Overweight</a></th>
             <td>25-29.9</td>
         </tr>
             <tbody>
             <tr>
-                <th scope="row">Obese</th>
+                <th scope="row"><a th:href="@{https://thechargegroup.com/obesity-tips-tricks/}">Obese</a></th>
                 <td>30-34.9</td>
             </tr>
             <tr>
-                <th scope="row">Extremely Obese</th>
+                <th scope="row"><a th:href="@{https://www.onhealth.com/content/1/morbidly_obese_tips_for_losing_100_pounds_or_more}">Extremely Obese</a></th>
                 <td> >35 </td>
             </tr>
             </tbody>
